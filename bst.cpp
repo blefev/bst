@@ -14,7 +14,17 @@ void BST::insert(int val)
 
 node* BST::insert_helper(int val, node* leaf)
 {
+    if(!node) {
+        node* tmp = new node;
+        tmp->val = val;
+        tmp->left = NULL;
+        tmp->right = NULL;
+        return tmp;
+    }
 
+    if(leaf->val < val) {
+        if (!cur->)
+    }
 }
 
 void BST::inorder()
@@ -24,7 +34,7 @@ void BST::inorder()
 
 void BST::inorder_helper(node* inputNode)
 {
-    if (inputNode == NULL) {
+    if (!inputNode) {
         return;
     }
 
