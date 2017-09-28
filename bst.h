@@ -23,8 +23,9 @@ public:
 
 private:
     node* root;
+    void inorder_helper(node*);
     void preorder_helper(node*);
-    node* insert_helper(int, node*);
+    node* insert_helper(int num, node* nodeToInsert);
 };
 
 
