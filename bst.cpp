@@ -40,6 +40,7 @@ void BST::insert_helper(int val, node *cur, node *newNode)
 
 void BST::inorder()
 {
+	cout << "INORDER: ";
 	this->inorder_helper(this->root);
 	cout << "END\n";
 }
@@ -57,6 +58,7 @@ void BST::inorder_helper(node* inputNode)
 
 void BST::postorder()
 {
+	cout << "POSTORDER: ";
 	this->postorder_helper(this->root);
 	cout << "END\n";
 }
@@ -74,6 +76,7 @@ void BST::postorder_helper(node* inputNode)
 
 void BST::preorder()
 {
+	cout << "PREORDER: ";
 	this->preorder_helper(this->root);
 	cout << "END\n";
 }
@@ -91,16 +94,14 @@ void BST::preorder_helper(node* inputNode)
 
 node* BST::search(int val)
 {
-	if (this->root == NULL) {
-		return NULL;
-	}
-
 	return this->search_helper(val, this->root);
 }
 
 node* BST::search_helper(int val, node *cur)
 {
-	if (val == cur->val) {
+	if (!cur) {
+		return NULL;
+	} else if (val == cur->val) {
 		return cur;
 	} else if (val < cur->val) {
 		return this->search_helper(val, cur->left);

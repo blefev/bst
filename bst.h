@@ -12,6 +12,8 @@ struct node{
     node* right = NULL;
 };
 
+// NOTE! This implementation ignores duplicates, and does
+// not insert them into the list at all.
 class BST{
 public:
     BST();
