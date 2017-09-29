@@ -8,8 +8,8 @@
 /* Struct which will be the building block of our list */
 struct node{
 	int val;
-	node* left;
-    node* right;
+	node* left = NULL;
+    node* right = NULL;
 };
 
 class BST{
@@ -22,10 +22,12 @@ public:
     node* search(int);
 
 private:
-    node* root;
+    node * root;
     void inorder_helper(node*);
     void preorder_helper(node*);
-    node* insert_helper(int num, node*);
+    void postorder_helper(node*);
+	node * search_helper(int, node*);
+    void insert_helper(int num, node*, node*);
 };
 
 
